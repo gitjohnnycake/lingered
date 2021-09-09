@@ -1,0 +1,118 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+// 变量
+@marAndPadAndFontList: {
+  4: 4px;
+  8: 8px;
+  10: 10px;
+  12: 12px;
+  13: 13px;
+  14: 14px;
+  15: 15px;
+  16: 16px;
+  18: 18px;
+  20: 20px;
+  22: 22px;
+  24: 24px;
+  26: 26px;
+  28: 28px;
+  32: 32px;
+  36: 36px;
+  40: 40px;
+};
+
+// margin
+each(@marAndPadAndFontList, {
+  .mt-@{key} {
+      margin-top: @value;
+  }
+  .mr-@{key} {
+      margin-right: @value;
+  }
+  .mb-@{key} {
+      margin-bottom: @value;
+  }
+  .ml-@{key} {
+      margin-left: @value;
+  }
+  .mg-@{key} {
+      margin: @value;
+  }
+});
+
+// padding
+each(@marAndPadAndFontList, {
+  .pt-@{key} {
+      padding-top: @value;
+  }
+  .pr-@{key} {
+      padding-right: @value;
+  }
+  .pb-@{key} {
+      padding-bottom: @value;
+  }
+  .pl-@{key} {
+      padding-left: @value;
+  }
+  .pd-@{key} {
+      padding: @value;
+  }
+});
+
+// font-size
+each(@marAndPadAndFontList, {
+  .fs-@{key} {
+      font-size: @value;
+  }
+});
+
+@transitionTime: {
+  1: 0.1s;
+  2: 0.2s;
+  3: 0.3s;
+  4: 0.4s;
+  5: 0.5s;
+  6: 0.6s;
+  7: 0.7s;
+  8: 0.8s;
+};
+
+// transtion
+each(@transitionTime, {
+  .ts-@{key} {
+      transition: all @value ease
+  }
+});
+
+.txt {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.wh {
+  width: 100%;
+  height: 100%;
+}
+
+.fl {
+  display: flex;
+}
+
+.fldc {
+  display: flex;
+  flex-direction: column;
+}
+
+.cc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
