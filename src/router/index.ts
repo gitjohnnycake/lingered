@@ -1,19 +1,28 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
-import Home from "@/views/Home/Home.vue"
+import CloudHome from "@/views/CloudHome/CloudHome.vue"
+import QqMusicHome from "@/views/QqMusicHome/QqMusicHome.vue"
 
 const history = createWebHistory()
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
-    redirect: "/home",
+    redirect: "/cloudhome",
   },
   {
-    path: "/home",
-    name: "home",
-    component: Home,
+    path: "/cloudhome",
+    name: "CloudHome",
+    component: CloudHome,
     meta: {
-      title: "首页"
+      title: "云音乐首页"
+    }
+  },
+  {
+    path: "/qmusichome",
+    name: "QqMusicHome",
+    component: QqMusicHome,
+    meta: {
+      title: "丘丘音乐首页"
     }
   }
 ]
